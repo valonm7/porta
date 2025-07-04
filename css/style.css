@@ -1789,7 +1789,7 @@ Main Header
   display: block;
 }
 .main-header .logo img {
-  max-width: 100%;
+  max-width: 120px;
   height: auto;
 }
 .main-header .main-box {
@@ -4198,7 +4198,7 @@ Sticky Header
 .mobile-menu .nav-logo {
   position: relative;
   text-align: left;
-  width: 100%;
+  width: 120px;
 }
 .mobile-menu .nav-logo img {
   max-height: 50px;
@@ -8812,23 +8812,17 @@ Section Title
     About Section Nine
 ====================================================================
 
-***/
-.about-section-nine {
-  position: relative;
-  padding: 120px 0;
-}
+***/.about-section-nine {
+      position: relative;
+      /* Changed padding-top to 0 to remove the empty space above the image */
+      padding: 0 0 120px 0; /* Keeping bottom padding if it's intended for content below */
+    }
 .about-section-nine:before {
   content: "";
   position: absolute;
-  bottom: 592px;
-  left: 0;
-  width: 583px;
-  height: 387px;
-  background-image: url(../images/icons/shape-19.png);
 }
 .about-section-nine .content-column .inner-column {
   padding-right: 30px;
-  padding-top: 8px;
 }
 @media (max-width: 991.98px) {
   .about-section-nine .content-column .inner-column {
@@ -8859,15 +8853,15 @@ Section Title
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   margin-left: -15px;
 }
 @media (max-width: 991.98px) {
   .about-section-nine .image-column .inner-column {
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
 }
 .about-section-nine .image-column .inner-column .image-1 {
@@ -8883,11 +8877,11 @@ Section Title
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 @media (max-width: 575.98px) {
   .about-section-nine .image-column .inner-column .image-2 {
@@ -8895,14 +8889,12 @@ Section Title
   }
 }
 .about-section-nine .image-column .inner-column .image-2 img {
-  margin-top: 30px;
 }
 .about-section-nine .image-column .inner-column .image-2 img:first-child {
-  margin-top: 0;
 }
 .about-section-nine .bg-image {
-  margin-top: 120px;
   margin-bottom: 4px;
+  /* Fixed height for larger screens */
   height: 592px;
   position: relative;
 }
@@ -8910,14 +8902,14 @@ Section Title
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .about-section-nine .bg-image .btn-box {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 @media (max-width: 575.98px) {
@@ -8940,6 +8932,20 @@ Section Title
   display: inline-block;
   z-index: 1;
 }
+
+/* Updated media query for mobile screens */
+@media (max-width: 767.98px) {
+  .about-section-nine .bg-image {
+    display: none;
+  }
+  .about-section-nine .bg-image img {
+    display: block; /* Ensure image behaves as a block element */
+    height: auto; /* Allow image height to scale proportionally */
+    max-width: 100%; /* Ensure image doesn't overflow its container */
+  }
+}
+
+
 
 /*** 
 
@@ -15972,6 +15978,7 @@ Section Title
   }
 }
 
+
 /***
 
 ==================================================================
@@ -18051,6 +18058,16 @@ Section Title
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
   border: 1px solid #202020;
+}
+
+
+
+/* Media query for mobile screens (e.g., up to 767px wide, which is common for Bootstrap's 'sm' breakpoint) */
+@media (max-width: 767px) {
+  .footer-widget.map-widget iframe {
+    height: 350px;
+    width: 400px/* Height for mobile screens */
+  }
 }
 .footer-style-one .subscribe-form-three .form-group input[type=text]::-webkit-input-placeholder, .footer-style-one .subscribe-form-three .form-group input[type=email]::-webkit-input-placeholder {
   color: var(--text-color);
@@ -22040,10 +22057,6 @@ Sidebar
   background-color: #fff;
   height: 180px;
 }
-
-
-
-
 
 @media (max-width: 575.98px) {
   .feature-block .inner-box {
