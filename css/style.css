@@ -22040,3 +22040,17 @@ Sidebar
   background-color: #fff;
   height: 180px;
 }
+
+
+
+
+
+@media (max-width: 575.98px) {
+  .feature-block .inner-box {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}
