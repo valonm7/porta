@@ -6768,6 +6768,17 @@ Section Title
 .banner-section-ten .banner-features .feature-block:last-child .inner:after {
   display: none;
 }
+.feature-block .bg-image {
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image from repeating */
+  transition: opacity 0.3s ease; /* Add a fade transition for hover */
+  opacity: 0; /* Initially hidden */
+}
+
+.feature-block:hover .bg-image {
+  opacity: 1; /* Show on hover */
+}
 .banner-section-ten .banner-features .feature-block .inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
