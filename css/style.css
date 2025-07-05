@@ -14277,11 +14277,7 @@ Section Title
     left: calc(88% - 90px);
   }
 }
-@media (max-width: 767.98px) {
-  .feature-section-five.slider-style .feature-slider .slick-arrow.slick-prev {
-    left: calc(77% - 30px);
-  }
-}
+
 @media (max-width: 575.98px) {
   .feature-section-five.slider-style .feature-slider .slick-arrow.slick-prev {
     left: calc(80% - 90px);
@@ -14457,6 +14453,162 @@ Section Title
   margin-right: 15px;
 }
 
+@media (max-width: 767.98px) {
+  .feature-section-five .content-column {
+    /* Ensure the column itself is full width and centered for the inner content */
+    left: 0 !important;
+    width: 100% !important;
+    text-align: center; /* Centers inline content/text within this column */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* --- Black Box for Text on Mobile --- */
+  .feature-section-five .content-column .inner-column {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    padding: 70px 20px; /* Increased vertical padding for taller box, and horizontal padding */
+    margin: 20px auto 150px auto; /* Crucial for horizontal centering: auto left/right margins */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2; /* Text box is layer 2 */
+    min-height: 250px; /* Increased minimum height */
+    max-width: calc(100% - 40px); /* Ensures it fits with 20px margin on each side */
+    box-sizing: border-box; /* Includes padding in width calculation */
+  }
+
+  /* Ensure the text elements within the black box are centered */
+  .feature-section-five .sec-title h2,
+  .feature-section-five .sec-title .sub-title,
+  .feature-section-five .text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--theme-color-white);
+  }
+
+  /* --- Show and Position Arrows Below Black Box on Mobile --- */
+  .feature-section-five .feature-slider .slick-arrow {
+    display: block !important; /* Show arrows on mobile */
+    position: absolute;
+    bottom: 5px; /* Position below the black box */
+    top: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: var(--theme-color-white);
+    font-size: 0;
+    height: 50px;
+    width: 50px;
+    z-index: 3; /* Above the black box */
+    transition: all 300ms ease;
+  }
+  
+
+  .feature-section-five .feature-slider .slick-arrow:hover {
+    background-color: var(--theme-color1);
+    border-color: var(--theme-color1);
+    color: var(--theme-color-white);
+  }
+
+  .feature-section-five .feature-slider .slick-arrow:before {
+    color: var(--theme-color-white);
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 45px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .feature-section-five .feature-slider .slick-arrow.slick-prev {
+    left: 50%;
+    transform: translateX(-50px); /* Center the prev arrow */
+  }
+
+  .feature-section-five .feature-slider .slick-arrow.slick-next {
+    left: 50%;
+    transform: translateX(5px); /* Position next arrow to the right of prev */
+  }
+
+  /* Also support slider-style class for compatibility */
+  .feature-section-five.slider-style .feature-slider .slick-arrow {
+    display: block !important;
+    position: absolute;
+    bottom: -60px; /* Position below the black box */
+    top: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: var(--theme-color-white);
+    font-size: 0;
+    height: 45px;
+    width: 45px;
+    z-index: 3;
+    transition: all 300ms ease;
+  }
+
+  .feature-section-five.slider-style .feature-slider .slick-arrow:hover {
+    background-color: var(--theme-color1);
+    border-color: var(--theme-color1);
+    color: var(--theme-color-white);
+  }
+
+  .feature-section-five.slider-style .feature-slider .slick-arrow:before {
+    color: var(--theme-color-white);
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 45px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .feature-section-five.slider-style .feature-slider .slick-arrow.slick-prev {
+    left: 50%;
+    transform: translateX(-50px);
+  }
+
+  .feature-section-five.slider-style .feature-slider .slick-arrow.slick-next {
+    left: 50%;
+    transform: translateX(5px);
+  }
+
+  /* --- "E" Shape Simulation on Mobile --- */
+  .feature-section-five .outer-box .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Image is layer 0 (very back) */
+    opacity: 0.3;
+  }
+
+  /* Pseudo-elements for the "E" shape */
+  .feature-section-five .outer-box .bg-image::before,
+  .feature-section-five .outer-box .bg-image::after {
+    content: '';
+    position: absolute;
+    background-color: #1B1B1B;
+    z-index: 1; /* These are layer 1, behind the text box */
+  }
+
+  .feature-section-five .outer-box .bg-image::before {
+    top: 15%;
+    left: 0;
+    width: 40%;
+    height: 10%;
+  }
+
+  .feature-section-five .outer-box .bg-image::after {
+    bottom: 15%;
+    left: 0;
+    width: 40%;
+    height: 10%;
+  }
+}
 /*** 
 
 ====================================================================
